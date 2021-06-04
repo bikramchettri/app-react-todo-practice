@@ -35,12 +35,12 @@ export const Todo = ({
         </div>
       ) : (
         <li>
-          <span
-            onClick={() => handleToggle(id)}
-            style={{ textDecoration: completed ? 'line-through' : '' }}
-          >
+          <span style={{ textDecoration: completed ? 'line-through' : '' }}>
             {todo}
           </span>
+          <button onClick={() => handleToggle(id)}>
+            {completed ? 'Completed' : 'Incomplete'}
+          </button>
           <button onClick={() => handleRemove(id)}>X</button>
           <button onClick={() => setIsEditing(!isEditing)}>Edit</button>
         </li>
